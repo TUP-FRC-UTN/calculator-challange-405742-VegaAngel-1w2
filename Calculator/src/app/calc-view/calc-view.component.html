@@ -1,0 +1,23 @@
+<h2 class="text-center">Calculadora</h2>
+<div class="row">
+  <div class="col-12">
+    <p class="text-center">Valor 1</p>
+    <input type="number" [value]="valor1" (input)="onInputChange1($event)" />
+  </div>
+  <div class="col-12">
+    <p class="text-center">Valor 2</p>
+    <input type="number" [value]="valor2" (input)="onInputChange2($event)" />
+  </div>
+  <div class="col-12">
+    <p class="text-center">Resultado</p>
+    <input type="number" disabled [value]="resultado" />
+  </div>
+  <div class="col-12">
+    <app-calc-actions
+      (salida)="recibirResultado($event)"
+      (salida2)="recibirBorrar($event)"
+      [entrada1]="valor1"
+      [entrada2]="valor2"
+    ></app-calc-actions>
+  </div>
+</div>
